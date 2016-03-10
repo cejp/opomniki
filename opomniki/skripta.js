@@ -34,6 +34,13 @@ window.addEventListener('load', function() {
 			var casovnik = opomnik.querySelector("span");
 			var cas = parseInt(casovnik.innerHTML);
 	
+			if(cas==0){
+				var naziv_opomnika = opomnik.querySelector(".naziv_opomnika").innerHTML;
+				alert("Opomnik\n\nZadolžitev '"+naziv_opomnika+"' je potekal!");
+				document.querySelector("#opomniki").removeChild(opomnik);
+			}else{
+				casovnik.innerHTML = cas-1;
+			}
 			
 			//TODO: 
 			// - če je čas enak 0, izpiši opozorilo "Opomnik!\n\nZadolžitev NAZIV_OPOMNIK je potekla!"
